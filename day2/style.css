@@ -1,10 +1,10 @@
-* 1. Reset: predictable sizing and no default body margin */
+/* 1. Reset: predictable sizing and no default body margin */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
- 
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -12,7 +12,7 @@ body {
   color: #222;
   line-height: 1.5;
 }
- 
+
 /* 2. Header */
 header {
   background-color: #8e0000;
@@ -20,18 +20,48 @@ header {
   text-align: center;
   padding: 24px 16px;
 }
- 
+
 header h1 {
   margin: 0;
+  font-size: 2.25rem;
 }
- 
-/* 3. Centre the main content and limit its width */
+
+header p {
+  margin: 4px 0 16px;
+}
+
+/* 3. Navigation: links in a centred row with Flexbox */
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-bottom: 2px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-bottom-color: white;
+}
+
+/* 4. Centre the main content and limit its width */
 main {
   max-width: 640px;
   margin: 24px auto;   /* auto left/right margins centre a block */
   padding: 0 16px;
 }
- 
+
 section {
   background: white;
   padding: 20px;
@@ -39,19 +69,60 @@ section {
   margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
- 
-/* 4. Form layout with Flexbox */
+
+/* 5. Features list as a responsive grid of cards */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.features li {
+  background-color: #fffbe6;
+  border-left: 4px solid #0ba184;
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 6. Shortcuts table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #8e0000;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+
+/* 7. Forms */
 #note-form {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
- 
+
 #note-form label {
   width: 100%;          /* label on its own line */
   font-weight: bold;
 }
- 
+
 #note-input {
   flex: 1;
   padding: 10px;
@@ -59,7 +130,41 @@ section {
   border-radius: 6px;
   font-size: 1rem;
 }
- 
+
+/* Feedback form: fields stacked vertically, full width */
+#feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#feedback-form label {
+  font-weight: bold;
+}
+
+#feedback-form input,
+#feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#feedback-form textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0ba184;
+  box-shadow: 0 0 0 3px rgba(11, 161, 132, 0.25);
+}
+
+/* 8. Buttons */
 button {
   background-color: #0ba184;
   color: white;
@@ -68,18 +173,23 @@ button {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
- 
+
 button:hover {
   background-color: #088a70;
 }
- 
-/* 5. Notes list */
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* 9. Notes list */
 #notes-list {
   list-style: none;     /* remove bullet points */
   padding: 0;
 }
- 
+
 .note {
   background-color: #fffbe6;
   border-left: 4px solid #0ba184;
@@ -87,16 +197,28 @@ button:hover {
   margin-bottom: 10px;
   border-radius: 6px;
 }
- 
-/* 6. Footer */
+
+/* 10. Footer */
 footer {
   text-align: center;
   color: #777;
   padding: 16px;
 }
- 
-/* 7. Phones */
+
+/* 11. Phones */
 @media (max-width: 600px) {
+  header {
+    padding: 14px 12px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
   #note-form {
     flex-direction: column;
   }
