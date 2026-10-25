@@ -1,0 +1,106 @@
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #52606d;
+  --border: #b8c2cc;
+  --accent: #1d4e5f;
+  --accent-hover: #14363f;
+  --accent-text: #ffffff;
+  --warning: #c26a00;
+  --over: #c0392b;
+}
+
+body.dark {
+  --bg: #12181d;
+  --surface: #1c252c;
+  --text: #e6ebef;
+  --muted: #9aa8b4;
+  --border: #3b4954;
+  --accent: #5bb5cc;
+  --accent-hover: #86cfe2;
+  --accent-text: #0e1a20;
+  --warning: #ffb347;
+  --over: #ff6b5e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+main {
+  max-width: 600px;
+  margin: 32px auto;
+  padding: 24px;
+  background: var(--surface);
+  border-radius: 12px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+textarea {
+  width: 100%;
+  font: inherit;
+  padding: 10px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  resize: vertical;
+}
+
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+p {
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+button {
+  font: inherit;
+  padding: 8px 16px;
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--accent-text);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+#char-count.warning {
+  color: var(--warning);
+}
+
+#char-count.over {
+  color: var(--over);
+  font-weight: bold;
+}

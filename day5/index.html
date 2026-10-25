@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users Directory</title>
+  <script src="users.js" defer></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: "Segoe UI", Arial, sans-serif; line-height: 1.5; max-width: 700px; margin: 24px auto; padding: 0 16px; color: #1f2933; }
+    label { font-weight: 600; margin-right: 8px; }
+    input, button { font: inherit; padding: 8px 10px; border: 1px solid #b8c2cc; border-radius: 6px; }
+    button { background: #1d4e5f; color: #fff; border-color: #1d4e5f; cursor: pointer; }
+    button:hover:not(:disabled) { background: #14363f; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
+    #status.error { color: #c0392b; font-weight: 600; }
+    #users-list { list-style: none; padding: 0; margin: 0; }
+    #users-list li { border: 1px solid #d9e0e6; border-left: 6px solid #1d4e5f; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
+    #users-list h2 { margin: 0 0 4px; font-size: 1.1rem; }
+    #users-list p { margin: 0; color: #52606d; }
+  </style>
+</head>
+<body>
+  <h1>Users Directory</h1>
+
+  <div class="controls">
+    <button id="load-users" type="button">Load users</button>
+    <div>
+      <label for="filter-input">Filter by name</label>
+      <input type="text" id="filter-input" placeholder="Type a name">
+    </div>
+  </div>
+
+  <p id="status"></p>
+  <ul id="users-list"></ul>
+</body>
+</html>
