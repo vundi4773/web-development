@@ -3,7 +3,7 @@
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
-  background: #f4f6f8;
+  background: #cda5b4;
   color: #1f2933;
   margin: 0;
 }
@@ -17,7 +17,7 @@ button {
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 6px;
-  background: #2563eb;
+  background: #cd476b;
   color: #fff;
   cursor: pointer;
 }
@@ -33,7 +33,7 @@ button.delete-btn:hover:not(:disabled) { background: #991b1b; }
 #status.error   { background: #fee2e2; color: #991b1b; border-left: 4px solid #dc2626; }
 
 form {
-  background: #fff;
+  background: #a87777;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
